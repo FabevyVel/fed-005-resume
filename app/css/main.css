@@ -1,41 +1,80 @@
 body{
-
+    font-family: 'poppins';
+    background-color: #1f1f1f;
 }
-h1{
-    color: #fff;
-    font-size: 35px;
-    font-family: 'Lobster', 'Arial', 'Times New Roman', cursive;
-    font-variant: small-caps;
-    font-size: 40px;
-    text-shadow: black 10px 10px 10px;
-}
-p{
-    color: darkorange;
-    font-size: 16px;
-}
-p{
-    color: darkorchid;
-}
-.one{
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-.two{
-    padding-top: 20px;
-    padding-bottom: 20px;
+.container{
+    width: 900px;
+    margin: auto;
+    background-color: #fff;
+    padding: 0 20px;
 }
 
-.my-table{
-    color: red;
-    border: solid 1px red;
+header h1{
+    font-size: 44px;
+    font-family: 'Lobster', sans-serif;
+    padding: 20px 0;
 }
-.my-table tr{
 
+header .connect{
+    background-color: #f1f1f1;
+    padding: 0 20px;
+    margin-bottom: 30px;
 }
-.my-table td{
+
+header .connect a{
+    padding: 10px 30px;
+    display: inline-block;
+    text-decoration: none;
+    color: purple;
+}
+
+header .connect a:link{
+    color: #000;
+}
+
+header .connect a:hover{
     color: blue;
 }
-.my-table th{
 
+header .connect a:active{
+    color: orange;
 }
 
+header .connect a:visited{
+    color: orchid;
+}
+
+.information{
+    border: solid 1px #f1f1f1;
+    margin: 0 0 30px;    
+}
+.information h3{
+    background-color: #f1f1f1;
+    padding: 20px 15px;
+}
+.information .info-data{
+    padding: 20px 15px;
+}
+.table-1{
+    
+}
+.table-1 tr{
+    
+}
+.table-1 td{
+    padding: 10px 16px;
+    border: solid 1px #f1f1f1;    
+}
+.table-1 th{
+    background: #f1f1f1;
+    padding: 10px 0;
+    border: solid 1px #f1f1f1;
+}
+.ordered-list-1{
+    list-style-type: lower-roman;
+    list-style-position: inside;
+}
+
+.ordered-list-1 li{
+    padding-bottom: 10px;
+}
