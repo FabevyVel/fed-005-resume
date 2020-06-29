@@ -1,0 +1,41 @@
+body{
+
+}
+h1{
+    color: #fff;
+    font-size: 35px;
+    font-family: 'Lobster', 'Arial', 'Times New Roman', cursive;
+    font-variant: small-caps;
+    font-size: 40px;
+    text-shadow: black 10px 10px 10px;
+}
+p{
+    color: darkorange;
+    font-size: 16px;
+}
+p{
+    color: darkorchid;
+}
+.one{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.two{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.my-table{
+    color: red;
+    border: solid 1px red;
+}
+.my-table tr{
+
+}
+.my-table td{
+    color: blue;
+}
+.my-table th{
+
+}
+
