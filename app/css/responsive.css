@@ -1,0 +1,26 @@
+@media (max-width: 520px){
+    header h1{
+        color: red;
+    }
+    .container{
+        width: 100%;
+    }
+}
+
+@media (min-width: 521px) and (max-width: 768px){
+    header h1{
+        color: blue;
+    }
+    .container{
+        width: 500px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1400px){
+    header h1{
+        color: yellow;
+    }
+    .container{
+        width: 749px;
+    }
+}
