@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'poppins';
     background-color: #1f1f1f;
@@ -77,4 +81,54 @@ header .connect a:visited{
 
 .ordered-list-1 li{
     padding-bottom: 10px;
+}
+
+.form-style-1{
+
+}
+.form-style-1 .fixed-width{
+    min-width: 180px;
+    display: inline-block;
+}
+.form-style-1 .input-section{
+    margin-bottom: 20px;
+}
+.form-style-1 .action-section{
+    margin-left: 185px;
+    display: inline-block;
+}
+.form-style-1 input[type='text'],
+.form-style-1 input[type='email'],
+.form-style-1 input[type='tel'],
+.form-style-1 select,
+.form-style-1 textarea{
+    border: solid 1px #ddd;
+    padding: 6px;
+    min-width: 300px;
+}
+.form-style-1 textarea{
+    min-height: 150px;
+}
+
+
+.form-style-1 input:focus{
+    border-color: cornflowerblue;
+    outline: none;
+    box-shadow: cornflowerblue 0 0 7px;
+}
+
+.primary-button{
+    background-color: cornflowerblue;
+    border: none;
+    padding: 10px 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.error-message{
+    color: red;
+    margin-left: 180px;
+    padding: 6px 0 0 0;
+    font-size: 12px;
+    display: none;
 }

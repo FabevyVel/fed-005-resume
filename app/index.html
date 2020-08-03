@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <title>Resume</title>
 </head>
 <body>
@@ -77,6 +78,153 @@
                 </ol>
             </div>
         </div>
+
+        <div class="information">
+            <h3>Contact Me</h3>
+            <div class="info-data">
+                <p id="result"></p>
+                <form action="" class="form-style-1" id="enquiry-form">
+                    <div class="input-section">
+                        <label class="fixed-width" for="full-name">Name</label>
+                        <input type="text" name="fullname" id="full-name">
+                        <div class="error-message" id="full-name-error">This field is mandatory</div>
+                    </div>
+                    <div class="input-section">
+                        <label class="fixed-width" for="email-id">Email ID</label> 
+                        <input type="email" name="email" id="email-id">                        
+                        <div class="error-message" id="email-error">This field is mandatory</div>
+                    </div>
+                    <div class="input-section">
+                        <label class="fixed-width" for="mobile-id">Mobile Number</label>
+                        <input type="tel" name="mobile" id="mobile-id">                        
+                        <div class="error-message" id="mobile-error">This field is mandatory</div>
+                    </div>
+                    <div class="input-section">
+                        <label class="fixed-width" for="">Gender</label>
+
+                        <input type="radio" name="gender" id="gender-male"> <label for="gender-male">Male</label> 
+                        <input type="radio" name="gender" id="gender-female"> <label for="gender-female">Female</label>
+                        <div class="error-message" id="gender-error">This field is mandatory</div>
+                    </div>
+                    <div class="input-section">
+                        <label class="fixed-width" for="">Languages Known</label>
+                        <input type="checkbox" name="lang">
+                        Tamil
+                        <input type="checkbox" name="lang">
+                        English
+                        <input type="checkbox" name="lang">
+                        Malayalam
+                        <input type="checkbox" name="lang">
+                        Telugu
+                        <div class="error-message" id="language-error">This field is mandatory</div>
+                    </div>
+                    <div class="input-section">
+                        <label class="fixed-width" for="">Country</label>
+                        <select name="country" id="country">
+                            <option value="">Select your country</option>
+                            <option value="IND">India</option>
+                            <option value="PAK">Pakistan</option>
+                            <option value="CHI">China</option>
+                        </select>
+                        <div class="error-message" id="country-error">This field is mandatory</div>
+                    </div>
+                    <div class="input-section">
+                        <label class="fixed-width" for="">Message</label>
+                        <textarea name="message" id=""></textarea>
+                    </div>
+                    <div class="action-section">
+                        <input type="button" value="Send" class="primary-button" id="form-button">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+    <script>
+        // Initiate program when user calls printMessage() function
+        function printMessage(){
+            
+            // Select Name Element
+            var nameElement = document.getElementById('full-name');
+
+            // Fetch & Store the name in a variable called 'username'
+            var username = nameElement.value;
+
+            // Select Email Element with id value as 'email-id'
+            var emailElement = document.getElementById('email-id');
+
+            // Fetch & Store the Email ID in a variable called 'usermail'
+            var usermail =  emailElement.value;
+
+            // Form message by combaining _username_, _emailid_, and static text **Thank You _username_ for your time. We will send a mail to _usermail_**
+            // Store the message in a variable called _output_
+            
+            var output = 'Thank You <strong>' + username + '</strong> for your time. We will send a mail to <strong>' + usermail +'</strong>'; //Concatenation
+
+            // Select Result Element
+            var resultElement = document.getElementById('result');
+
+            // Print _output_ in the screen.
+            resultElement.innerHTML = output;
+
+        }
+
+        function validateForm(){
+
+            // Check if name is Empty
+            var nameElement = document.getElementById('full-name');
+            var username = nameElement.value;
+            if(username == "" || username == null){
+                document.getElementById('full-name-error').style.display = "block";
+            }else{
+                document.getElementById('full-name-error').style.display = "none";
+            }
+
+            // Check if email is Empty
+            var emailElement = document.getElementById('email-id');
+            var usermail =  emailElement.value;
+            if(usermail == "" || usermail == null){
+                document.getElementById('email-error').style.display = "block";
+            }else{
+                document.getElementById('email-error').style.display = "none";
+            }
+
+            // Todo: Check if mobile is Empty
+
+            // Check if gender is selected
+            var maleElement = document.getElementById('gender-male'),
+                isMaleElementSelected = maleElement.checked;
+
+            var femaleElement = document.getElementById('gender-female'),
+                isFemaleElementSelected = femaleElement.checked
+
+            if(isMaleElementSelected || isFemaleElementSelected){
+                document.getElementById('gender-error').style.display = "none";
+            }else{
+                document.getElementById('gender-error').style.display = "block";
+            }
+
+            // Todo: Check if at least one Language is selected
+
+            // Check if country if given
+            var countryElement = document.getElementById('country'),
+                country = countryElement.value;
+
+            if(country == "" || country == null){
+                document.getElementById('country-error').style.display = "block";
+            }else{
+                document.getElementById('country-error').style.display = "none";
+            }
+
+            // Todo: Check if something is given in textarea
+
+
+        }
+
+        var buttonElement = document.getElementById('form-button');
+        
+        buttonElement.addEventListener('click', validateForm);
+
+
+    </script>
 </body>
 </html>
