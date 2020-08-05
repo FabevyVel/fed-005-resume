@@ -87,24 +87,20 @@
                     <div class="input-section">
                         <label class="fixed-width" for="full-name">Name</label>
                         <input type="text" name="fullname" id="full-name">
-                        <div class="error-message" id="full-name-error">This field is mandatory</div>
                     </div>
                     <div class="input-section">
                         <label class="fixed-width" for="email-id">Email ID</label> 
                         <input type="email" name="email" id="email-id">                        
-                        <div class="error-message" id="email-error">This field is mandatory</div>
                     </div>
                     <div class="input-section">
                         <label class="fixed-width" for="mobile-id">Mobile Number</label>
                         <input type="tel" name="mobile" id="mobile-id">                        
-                        <div class="error-message" id="mobile-error">This field is mandatory</div>
                     </div>
                     <div class="input-section">
                         <label class="fixed-width" for="">Gender</label>
 
                         <input type="radio" name="gender" id="gender-male"> <label for="gender-male">Male</label> 
                         <input type="radio" name="gender" id="gender-female"> <label for="gender-female">Female</label>
-                        <div class="error-message" id="gender-error">This field is mandatory</div>
                     </div>
                     <div class="input-section">
                         <label class="fixed-width" for="">Languages Known</label>
@@ -116,7 +112,6 @@
                         Malayalam
                         <input type="checkbox" name="lang">
                         Telugu
-                        <div class="error-message" id="language-error">This field is mandatory</div>
                     </div>
                     <div class="input-section">
                         <label class="fixed-width" for="">Country</label>
@@ -126,7 +121,6 @@
                             <option value="PAK">Pakistan</option>
                             <option value="CHI">China</option>
                         </select>
-                        <div class="error-message" id="country-error">This field is mandatory</div>
                     </div>
                     <div class="input-section">
                         <label class="fixed-width" for="">Message</label>
@@ -168,24 +162,53 @@
 
         }
 
+        function addErrorMessage(targetElement){
+
+            //Check if error message is already available
+            var errorElement = targetElement.parentNode.getElementsByClassName('error-message')[0];
+            if(errorElement != undefined){
+                return false
+            }
+
+            //Create a 'div' tag
+            var errorMessageElement = document.createElement('div');
+
+            //Add text to that tag
+            errorMessageElement.innerHTML = 'This field is mandatory';
+
+            //Add classname
+            errorMessageElement.classList.add("error-message");
+
+            targetElement.parentNode.appendChild(errorMessageElement);
+
+        }
+
+        function removeErrorMessage(targetElement){
+            //Select Error Element
+            var errorElement = targetElement.parentNode.getElementsByClassName('error-message')[0];
+            if(errorElement != undefined){
+                errorElement.parentNode.removeChild(errorElement);
+            }
+        }
+
         function validateForm(){
 
             // Check if name is Empty
             var nameElement = document.getElementById('full-name');
             var username = nameElement.value;
             if(username == "" || username == null){
-                document.getElementById('full-name-error').style.display = "block";
+                addErrorMessage(nameElement);
             }else{
-                document.getElementById('full-name-error').style.display = "none";
+                removeErrorMessage(nameElement);
             }
 
             // Check if email is Empty
             var emailElement = document.getElementById('email-id');
             var usermail =  emailElement.value;
             if(usermail == "" || usermail == null){
-                document.getElementById('email-error').style.display = "block";
+                addErrorMessage(emailElement);
             }else{
-                document.getElementById('email-error').style.display = "none";
+                removeErrorMessage(emailElement);
             }
 
             // Todo: Check if mobile is Empty
@@ -198,9 +221,9 @@
                 isFemaleElementSelected = femaleElement.checked
 
             if(isMaleElementSelected || isFemaleElementSelected){
-                document.getElementById('gender-error').style.display = "none";
+                removeErrorMessage(maleElement);
             }else{
-                document.getElementById('gender-error').style.display = "block";
+                addErrorMessage(maleElement);
             }
 
             // Todo: Check if at least one Language is selected
@@ -210,9 +233,9 @@
                 country = countryElement.value;
 
             if(country == "" || country == null){
-                document.getElementById('country-error').style.display = "block";
+                addErrorMessage(countryElement);
             }else{
-                document.getElementById('country-error').style.display = "none";
+                removeErrorMessage(countryElement);
             }
 
             // Todo: Check if something is given in textarea
